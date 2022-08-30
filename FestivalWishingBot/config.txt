@@ -4,7 +4,7 @@
   "PortNumber":"465",
   "Server":"smtp.gmail.com",
   "inputfilepath":"festivalList.xlsx",
-  "ToAddress":"sornalakshmie5@gmail.com,sharongiftae5@gmail.com,sankaravenie5@gmail.com,aartiak.e5@gmail.com,narenbagavathye5@gmail.com,sathyamoorthie5@gmail.com,alagappan.m@e5.ai,naresh.kumar@e5.ai,lakshmi.u@tiliconveli.com",
+  "ToAddress":"sornalakshmie5@gmail.com,sharongiftae5@gmail.com,sankaravenie5@gmail.com,aartiak.e5@gmail.com,narenbagavathye5@gmail.com,sathyamoorthie5@gmail.com,naresh.kumar@e5.ai,lakshmi.u@tiliconveli.com",
   "WishesStyle":"<html><body></br><p>A Pleasant Morning to Everyone</p></br><h3 style='text-align:center'>{0}</h3></br></br><img style='display:block;margin-left:auto;margin-right:auto;width:50%' src={1} alt={2}></body></html>"
   }
 
