@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1282,1613</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1608,1613</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="36">
@@ -148,15 +148,9 @@
                 </sap:WorkflowViewStateService.ViewState>
                 <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Config - Json has all the required input such as asset name , queue name and other credentials" DisplayName="Invoke config For Festival bot in json text workflow" sap:VirtualizedContainerService.HintSize="200,123" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="config For Festival bot in json text.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
-                    <OutArgument x:TypeArguments="njl:JObject" x:Key="out_ConfigJson">
-                      <mva:VisualBasicReference x:TypeArguments="njl:JObject" ExpressionText="Configjson" />
-                    </OutArgument>
-                    <OutArgument x:TypeArguments="x:String" x:Key="out_mailUserName">
-                      <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="mailUserName" />
-                    </OutArgument>
-                    <OutArgument x:TypeArguments="x:String" x:Key="out_mailPassWord">
-                      <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="mailPassword" />
-                    </OutArgument>
+                    <OutArgument x:TypeArguments="njl:JObject" x:Key="out_ConfigJson">[Configjson]</OutArgument>
+                    <OutArgument x:TypeArguments="x:String" x:Key="out_mailUserName">[mailUserName]</OutArgument>
+                    <OutArgument x:TypeArguments="x:String" x:Key="out_mailPassWord">[mailPassword]</OutArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -229,7 +223,7 @@
                                         <av:Size x:Key="ShapeSize">200,108</av:Size>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <Sequence sap2010:Annotation.AnnotationText="Adding Festival informatin into the queue " DisplayName="Dispatcher" sap:VirtualizedContainerService.HintSize="200,108" sap2010:WorkflowViewState.IdRef="Sequence_1">
+                                    <Sequence sap2010:Annotation.AnnotationText="Adding Festival informatin into the queue " DisplayName="Dispatcher" sap:VirtualizedContainerService.HintSize="843,2183" sap2010:WorkflowViewState.IdRef="Sequence_1">
                                       <Sequence.Variables>
                                         <Variable x:TypeArguments="sd:DataTable" Name="FestivalDT" />
                                         <Variable x:TypeArguments="x:Int32" Name="int_rowCount" />
@@ -240,18 +234,12 @@
                                           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="667,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Started dispatcher workflow&quot;]" />
-                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Reading Festival List Input Excel" DisplayName="Invoke Reading excel workflow" sap:VirtualizedContainerService.HintSize="667,143" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Reading excel.xaml">
+                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="801,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Started dispatcher workflow&quot;]" />
+                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Reading Festival List Input Excel" DisplayName="Invoke Reading excel workflow" sap:VirtualizedContainerService.HintSize="801,143" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Reading excel.xaml">
                                         <ui:InvokeWorkflowFile.Arguments>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_inputfilepath">
-                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Configjson(&quot;inputfilepath&quot;).ToString" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_sheetname">
-                                            <Literal x:TypeArguments="x:String">Sheet1</Literal>
-                                          </InArgument>
-                                          <OutArgument x:TypeArguments="sd:DataTable" x:Key="dt_readinputfile">
-                                            <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="FestivalDT" />
-                                          </OutArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_inputfilepath">[Configjson("inputfilepath").ToString]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_sheetname">Sheet1</InArgument>
+                                          <OutArgument x:TypeArguments="sd:DataTable" x:Key="dt_readinputfile">[FestivalDT]</OutArgument>
                                         </ui:InvokeWorkflowFile.Arguments>
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -259,7 +247,7 @@
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
                                       </ui:InvokeWorkflowFile>
-                                      <Assign sap:VirtualizedContainerService.HintSize="667,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                                      <Assign sap:VirtualizedContainerService.HintSize="801,60" sap2010:WorkflowViewState.IdRef="Assign_4">
                                         <Assign.To>
                                           <OutArgument x:TypeArguments="x:Int32">[int_rowCount]</OutArgument>
                                         </Assign.To>
@@ -267,13 +255,13 @@
                                           <InArgument x:TypeArguments="x:Int32">[FestivalDT.Rows.Count]</InArgument>
                                         </Assign.Value>
                                       </Assign>
-                                      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Adding each festival details into the queue" DataTable="[FestivalDT]" DisplayName="Adding Each Festival Details" sap:VirtualizedContainerService.HintSize="667,1012" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                                      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Adding each festival details into the queue" DataTable="[FestivalDT]" DisplayName="Adding Each Festival Details" sap:VirtualizedContainerService.HintSize="801,1105" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
                                         <ui:ForEachRow.Body>
                                           <ActivityAction x:TypeArguments="sd:DataRow">
                                             <ActivityAction.Argument>
                                               <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                                             </ActivityAction.Argument>
-                                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="633,866" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="767,959" sap2010:WorkflowViewState.IdRef="Sequence_2">
                                               <Sequence.Variables>
                                                 <Variable x:TypeArguments="x:String" Name="festivalDate" />
                                                 <Variable x:TypeArguments="s:DateTime" Name="functionDate" />
@@ -284,7 +272,7 @@
                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="591,162" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+                                              <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="725,162" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
                                                 <ui:MultipleAssign.AssignOperations>
                                                   <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                                                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
@@ -314,17 +302,17 @@
                                                   </scg:List>
                                                 </ui:MultipleAssign.AssignOperations>
                                               </ui:MultipleAssign>
-                                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="591,91" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="Warn" Message="[str_festivalDate]" />
-                                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="591,91" sap2010:WorkflowViewState.IdRef="LogMessage_18" Level="Warn" Message="[DateTime.Now.ToString(&quot;dd/MM/yyyy&quot;)]" />
-                                              <If Condition="[str_festivalDate=DateTime.Now.ToString(&quot;dd/MM/yyyy&quot;)]" sap:VirtualizedContainerService.HintSize="591,310" sap2010:WorkflowViewState.IdRef="If_2">
+                                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="725,91" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="Warn" Message="[str_festivalDate]" />
+                                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="725,91" sap2010:WorkflowViewState.IdRef="LogMessage_18" Level="Warn" Message="[DateTime.Now.ToString(&quot;dd/MM/yyyy&quot;)]" />
+                                              <If Condition="[str_festivalDate=DateTime.Now.ToString(&quot;dd/MM/yyyy&quot;)]" sap:VirtualizedContainerService.HintSize="725,403" sap2010:WorkflowViewState.IdRef="If_2">
                                                 <If.Then>
-                                                  <Sequence sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                                                  <Sequence sap:VirtualizedContainerService.HintSize="376,245" sap2010:WorkflowViewState.IdRef="Sequence_10">
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
-                                                    <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="[Configjson(&quot;Queuename&quot;).ToString]" Reference="[functionDate.ToString(&quot;dd/MM/yyyy&quot;)]">
+                                                    <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="[Configjson(&quot;Queuename&quot;).ToString]" Reference="[functionDate.ToString(&quot;dd/MM/yyyy&quot;)]">
                                                       <ui:AddQueueItem.ItemInformation>
                                                         <InArgument x:TypeArguments="x:String" x:Key="Date">[functionDate.ToString("dd/MM/yyyy")]</InArgument>
                                                         <InArgument x:TypeArguments="x:String" x:Key="Festival Name">[CurrentRow("Festival Name").ToString]</InArgument>
@@ -333,6 +321,7 @@
                                                         <InArgument x:TypeArguments="x:String" x:Key="GIF">[CurrentRow("GIF").ToString]</InArgument>
                                                       </ui:AddQueueItem.ItemInformation>
                                                     </ui:AddQueueItem>
+                                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_19" Level="Info" Message="[&quot;Added in  Queue&quot;]" />
                                                   </Sequence>
                                                 </If.Then>
                                                 <If.Else>
@@ -362,7 +351,7 @@
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
                                       </ui:ForEachRow>
-                                      <If Condition="[count=int_rowCount]" sap:VirtualizedContainerService.HintSize="667,370" sap2010:WorkflowViewState.IdRef="If_4">
+                                      <If Condition="[count=int_rowCount]" sap:VirtualizedContainerService.HintSize="801,370" sap2010:WorkflowViewState.IdRef="If_4">
                                         <If.Then>
                                           <Sequence sap:VirtualizedContainerService.HintSize="376,183" sap2010:WorkflowViewState.IdRef="Sequence_14">
                                             <sap:WorkflowViewStateService.ViewState>
@@ -383,7 +372,7 @@
                                           </Sequence>
                                         </If.Else>
                                       </If>
-                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="667,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Ended dispatcher workflow&quot;]" />
+                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="801,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Ended dispatcher workflow&quot;]" />
                                     </Sequence>
                                   </FlowStep>
                                 </FlowDecision.True>
@@ -608,30 +597,14 @@
                                   </ui:LogMessage>
                                   <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Send email workflow" DisplayName="Invoke Sending mail workflow" sap:VirtualizedContainerService.HintSize="431,143" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Sending mail.xaml">
                                     <ui:InvokeWorkflowFile.Arguments>
-                                      <InArgument x:TypeArguments="x:String" x:Key="in_toaddress">
-                                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Configjson(&quot;ToAddress&quot;).ToString" />
-                                      </InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="in_subject">
-                                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="mail_subject" />
-                                      </InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="in_body">
-                                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="mail_wishes" />
-                                      </InArgument>
-                                      <InArgument x:TypeArguments="x:Int32" x:Key="in_port">
-                                        <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="CInt(Configjson(&quot;PortNumber&quot;))" />
-                                      </InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="in_server">
-                                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Configjson(&quot;Server&quot;).ToString" />
-                                      </InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="in_email">
-                                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Mailusername" />
-                                      </InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="in_password">
-                                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="mailPassword" />
-                                      </InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="in_attachment">
-                                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="mail_attachment" />
-                                      </InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_toaddress">[Configjson("ToAddress").ToString]</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_subject">[mail_subject]</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_body">[mail_wishes]</InArgument>
+                                      <InArgument x:TypeArguments="x:Int32" x:Key="in_port">[CInt(Configjson("PortNumber"))]</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_server">[Configjson("Server").ToString]</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_email">[Mailusername]</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_password">[mailPassword]</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_attachment">[mail_attachment]</InArgument>
                                     </ui:InvokeWorkflowFile.Arguments>
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
